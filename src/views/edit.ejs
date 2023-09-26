@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create user</title>
+</head>
+<style>
+    li {
+  float: left;
+}
+
+a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+</style>
+<body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/create">Update User</a></li>
+      </ul>
+      <br>
+    <form action="/update-user/<%=userEdit?.id%>" class="from" method="post">
+        <div class="input-group">
+            <label for="">Email</label>
+            <input type="text" name="email"
+            value="<%=userEdit?.email%>"
+            >
+            <label for="">Name</label>
+            <input type="text" name="myname"
+            value="<%=userEdit?.name%>">
+            <label for="">City</label>
+            <input type="text" name="city"  value="<%=userEdit?.city%>">
+            <button>Add</button>
+        </div>
+    </form>
+</body>
+</html>
