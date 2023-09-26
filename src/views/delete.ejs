@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create user</title>
+</head>
+<style>
+    li {
+  float: left;
+}
+
+a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+</style>
+<body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/create">Delete User</a></li>
+      </ul>
+      <br>
+    <form action="/delete-user" class="from" method="post">
+        <div class="input-group">
+            <label for="">Are you sure Delete user width Email</label>
+            <input type="hidden" 
+            value="<%=userEdit?.id%>"
+            name="id"
+            >
+            <input type="text" name="email"
+            value="<%=userEdit?.email%>"
+            >
+            <button>Confirm</button>
+        </div>
+    </form>
+</body>
+</html>
