@@ -10,7 +10,7 @@ const postCreateUserApi = async (req, res) => {
     let email = req.body.email;
     let name = req.body.myname;
     let city = req.body.city;
-   let user= await User.create({
+    let user = await User.create({
         email, name, city
     })
     return res.status(200).json({
@@ -18,4 +18,16 @@ const postCreateUserApi = async (req, res) => {
         data: user
     })
 }
-module.exports = { getUserApi ,postCreateUserApi}
+const putUpdateUserApi = async (req, res) => {
+    let email = req.body.email;
+    let name = req.body.myname;
+    let city = req.body.city;
+    const userId = req.body.id;
+    // await updateUserById(email, name, city, userId)
+    let user = await User.updateOne({ _id: userId }, { email: email, name: name, city: city });
+    return res.status(200).json({
+        errorCode: 0,
+        data: user
+    })
+}
+module.exports = { getUserApi, postCreateUserApi, putUpdateUserApi }
