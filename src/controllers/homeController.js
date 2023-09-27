@@ -1,8 +1,9 @@
 const connection = require('../config/database')
 const { getAllUser, getUserById, updateUserById,removeUserById } = require('../services/CRUDServices')
 const getHomePage = async (req, res) => {
-    let results = await getAllUser();
-    return res.render('home', { listUsers: results })
+    // let results = await getAllUser();
+    // return res.render('home', { listUsers: results })
+    return res.render('home')
 }
 const getDataTest = (req, res) => {
     res.render('sample.ejs')
