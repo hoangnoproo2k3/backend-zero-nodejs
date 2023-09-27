@@ -3,7 +3,7 @@ const { getAllUser, getUserById, updateUserById, removeUserById } = require('../
 const User = require('../models/user')
 const getHomePage = async (req, res) => {
     // let results = await getAllUser();
-    let results = [];
+    let results =   await User.find({});;
     return res.render('home', { listUsers: results })
 }
 const getDataTest = (req, res) => {
