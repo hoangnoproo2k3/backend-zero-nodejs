@@ -6,4 +6,16 @@ const getUserApi = async (req, res) => {
         data: results
     })
 }
-module.exports = { getUserApi }
+const postCreateUserApi = async (req, res) => {
+    let email = req.body.email;
+    let name = req.body.myname;
+    let city = req.body.city;
+   let user= await User.create({
+        email, name, city
+    })
+    return res.status(200).json({
+        errorCode: 0,
+        data: user
+    })
+}
+module.exports = { getUserApi ,postCreateUserApi}
