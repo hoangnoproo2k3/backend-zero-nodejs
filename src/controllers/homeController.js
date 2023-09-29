@@ -42,7 +42,6 @@ const postDeleteUser = async (req, res) => {
     let user=await User.findById(userId).exec();
     // let user = await getUserById(userId)
     res.render('delete', { userEdit: user })
-
 }
 const postHandleRemoveUser = async (req, res) => {
     const userId = req.body.id;
